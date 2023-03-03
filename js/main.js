@@ -25,7 +25,7 @@ function start(){
     const difficolta = document.querySelector(".ms_label").value;
     const scelta = difficolta;
     container.innerHTML = '';
-    
+
     if(scelta === 'normal'){
         for(let i = 1; i <= 81; i++){
             const cella = creaCella('div', 'cella', 'normal', i);
@@ -44,12 +44,32 @@ function start(){
     }
 
     container.classList.add('display');
-    container.classList.remove('d-none'); 
+    container.classList.remove('d-none');
+}
+
+// Genera numeri casuali da 1 a 16
+function numeriACaso(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 // MAIN
 const container = document.querySelector(".ms_container");
 const button = document.querySelector(".ms_btn");
+
+const nCasuali = [];
+const generati = numeriACaso(1, 6);
+
+for(let i = 0; i <= 16 - 1; i++){
+    if(generati != nCasuali[i]){
+    nCasuali.push(generati);
+    } else {
+
+    }
+}
+console.log(nCasuali)
+console.log(generati)
+
+
 
 // Pulsante Play
 button.addEventListener('click', start);
